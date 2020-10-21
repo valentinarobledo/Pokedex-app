@@ -1,14 +1,14 @@
 <template>
   <div id="app">  
     <div class="container">
-      <div v-for="(pokemon, index) in pokemons" v-bind:key="'poke'+index">
+      <div v-for="(pokemon, index) in pokemons" v-bind:key="'poke'+index"  @click="setPokemonUrl(pokemon.url)">
 				<b-card
 				:img-src="imgUrl + pokemon.id + '.png'"
 				img-alt="Image"
 				img-top
 				tag="article"
-				style="max-width: 15rem;"
-				class="mb-2"
+				style="max-width: 12rem;"
+				class="mb-2 card"
 			>
 				<b-card-text>
 					<h5>{{ pokemon.name }}</h5>
@@ -16,6 +16,9 @@
 
 			</b-card>
 		</div>
+		<div id="scroll-trigger" ref="infinitescrolltrigger">
+      <i class="fas fa-spinner fa-spin"></i>
+    </div>
     </div>
   </div>
 </template>
@@ -92,5 +95,13 @@
 {
 	text-align: center;
 	color:#777474;
+}
+.card
+{
+	margin:10px;
+	border-radius: 5px;
+	cursor: pointer;
+	box-shadow: 0 15px 30px rgba(0,0,0,.2),
+							0 10px 10px rgba(0,0,0,.2);
 }
 </style>
