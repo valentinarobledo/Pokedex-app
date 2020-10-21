@@ -11,7 +11,9 @@
 				class="mb-2 card"
 			>
 				<b-card-text>
+          <div class="text">
 					<h5>{{ pokemon.name }}</h5>
+          </div>
 				</b-card-text>
 
 			</b-card>
@@ -94,7 +96,7 @@
 .mb-2
 {
 	text-align: center;
-	color:#777474;
+	color:white;
 }
 .card
 {
@@ -103,5 +105,17 @@
 	cursor: pointer;
 	box-shadow: 0 15px 30px rgba(0,0,0,.2),
 							0 10px 10px rgba(0,0,0,.2);
+}
+.text
+{
+  background-color:#6b6969;
+  border-radius:10px;
+  &:hover{
+    background-color:#9c9898;
+  }
+}
+h5
+{
+  font-weight:900 !important;
 }
 </style>

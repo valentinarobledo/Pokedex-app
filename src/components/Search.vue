@@ -1,9 +1,8 @@
 <template>
     <div class="searchbar">
     <form @submit.prevent="setPokemonUrl">
-      <input type="text" v-model="searchvalue">
+      <input type="text" v-model="searchvalue" placeholder="Buscar Pokemon">
     </form>
-      <i class="fas fa-search" v-on:click="setPokemonUrl"></i>
     </div>
 </template>
 <script>
@@ -28,11 +27,13 @@ export default {
 <style lang="scss" scoped>
   .searchbar {
     position:relative;
+    float: right;
     width: 100%;
     max-width: 510px;
     padding-bottom: 20px;
 
     input {
+      text-align: center;
       border: none;
       outline: none;
       border-radius: 5px;

@@ -2,7 +2,7 @@
   <div id="app">  
     <div class="container">
       <div class="row">
-       <h1>Pokemon App</h1>
+        <div class="title">Pokemon App</div>
       </div>
       <div class="row">
         <div class="col-sm-4">
@@ -64,4 +64,13 @@ export default {
 </script>
 
 <style lang="scss">
+@import url('https://use.fontawesome.com/releases/v5.8.2/css/all.css');
+
+.title{
+  font-size:40px;
+  font-weight:900;
+  margin-top:30px;
+  text-align: center;
+  color:#6b6969;
+}
 </style>
