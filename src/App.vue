@@ -2,7 +2,7 @@
   <div id="app">  
     <div class="container">
       <div class="row">
-        <div class="title">Pokemon App</div>
+        <img class="banner" src="./banner.png" alt="logo">
       </div>
       <div class="row">
         <div class="col-sm-4">
@@ -66,11 +66,7 @@ export default {
 <style lang="scss">
 @import url('https://use.fontawesome.com/releases/v5.8.2/css/all.css');
 
-.title{
-  font-size:40px;
-  font-weight:900;
+.banner{
   margin-top:30px;
-  text-align: center;
-  color:#6b6969;
 }
 </style>
