@@ -57,7 +57,7 @@ export default {
     },
     closeDetails(){
       this.pokemonUrl='';
-      this.showdetails=false;
+      this.showDetails=false;
     }
   }
 }
