@@ -20,6 +20,8 @@
           v-if="showDetails"
           :pokemonUrl="pokemonUrl"
           :imgUrl="imgUrl"
+          :color="color"
+          :habitat="habitat"
           @closeDetails="closeDetails"/>
         </div>
       </div>
@@ -36,8 +38,10 @@ export default {
   name: 'App',
   data(){
     return{
-      apiUrl: 'https://pokeapi.co/api/v2/pokemon/',
+      apiUrl: 'https://pokeapi.co/api/v2/',
       imgUrl: 'https://pokeres.bastionbot.org/images/pokemon/',
+      color:'',
+      habitat:'',
       pokemonUrl:'',
       showDetails:false
     }
@@ -52,13 +56,32 @@ export default {
   },
   methods:{
     setPokemonUrl(url){
-      this.pokemonUrl=url;
-      this.showDetails=true;
+      this.pokemonUrl=url.url1;
+      this.fetchData(url.url2);
+      this.showDetails=true;     
     },
+    fetchData(url) {
+      let req = new Request(url);
+      fetch(req)
+        .then((resp) => {
+          if(resp.status === 200)
+            return resp.json();
+        })
+        .then((data) => {
+          this.color=data.color.name;
+          console.log(data.color.name);
+          console.log(data.habitat.name);
+          this.habitat=data.habitat.name;
+        })
+        .catch((error) => {
+          console.log(error);
+        })
+      },
     closeDetails(){
       this.pokemonUrl='';
       this.showDetails=false;
     }
+
   }
 }
 </script>

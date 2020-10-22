@@ -1,7 +1,7 @@
 <template>
   <div id="app">  
     <div class="container">
-      <div v-for="(pokemon, index) in pokemons" v-bind:key="'poke'+index"  @click="setPokemonUrl(pokemon.url)">
+      <div v-for="(pokemon, index) in pokemons" v-bind:key="'poke'+index"  @click="setPokemonUrl(pokemon.url, pokemon.id)">
 				<b-card
 				:img-src="imgUrl + pokemon.id + '.png'"
 				img-alt="Image"
@@ -40,7 +40,7 @@
     },
     methods: {
       fetchData() {
-        let req = new Request(this.currentUrl);
+        let req = new Request(this.currentUrl + 'pokemon/');
         fetch(req)
           .then((resp) => {
             if(resp.status === 200)
@@ -73,8 +73,8 @@
         this.currentUrl = this.nextUrl;
         this.fetchData();
       },
-      setPokemonUrl(url) {
-        this.$emit('setPokemonUrl', url);
+      setPokemonUrl(url, id) {
+        this.$emit('setPokemonUrl', {url1:url, url2:this.apiUrl + 'pokemon-species/' + id});
       }
     },
     created() {

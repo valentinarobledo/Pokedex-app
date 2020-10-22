@@ -29,11 +29,11 @@
 							</div>
 							<div class="prop">
 								<div class="left">Habitat</div>
-								<div class="right"></div>
+								<div class="right">{{habitat}}</div>
 							</div>
 							<div class="prop">
 								<div class="left">Color</div>
-								<div class="right"></div>
+								<div class="right">{{color}}</div>
 							</div>
 							<h4>Pokemon Types</h4>
 							<div class="types">
@@ -54,8 +54,10 @@
 <script>
   export default {
     props: [
-      'pokemonUrl',
-      'imgUrl'
+			'pokemonUrl',
+			'imgUrl',
+			'color',
+			'habitat'
     ],
     data: () => {
       return {
@@ -65,7 +67,8 @@
     },
     methods: {
       fetchData() {
-        let req = new Request(this.pokemonUrl);
+				let req = new Request(this.pokemonUrl);
+				console.log(this.color, this.habitat);
         fetch(req)
           .then((resp) => {
             if(resp.status === 200)

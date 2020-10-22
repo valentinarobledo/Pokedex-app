@@ -8,7 +8,9 @@
 <script>
 export default {
     props:[
-        'apiUrl'
+        'apiUrl',
+        'color',
+        'habitat'
     ],
     data:()=>{
         return{
@@ -17,9 +19,12 @@ export default {
     },
     methods:{
         setPokemonUrl(){
-            if(this.searchvalue !== '')
-                this.$emit('setPokemonUrl', this.apiUrl + this.searchvalue);
+            if(this.searchvalue !== ''){
+                this.$emit('setPokemonUrl', {url1: this.apiUrl + 'pokemon/' + this.searchvalue,
+                 url2:this.apiUrl + 'pokemon-species/' + this.searchvalue});
+            }
         }
+        
     }
 }
 </script>
