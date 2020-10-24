@@ -12,7 +12,7 @@
 			>
 				<b-card-text>
           <div class="text">
-					<h5>{{ pokemon.name }}</h5>
+					<h6>{{ pokemon.name }}</h6>
           </div>
 				</b-card-text>
 
@@ -102,16 +102,20 @@
 {
 	margin:20px;
 	border-radius: 5px;
+  padding:15px;
 	cursor: pointer;
 	box-shadow: 0 15px 30px rgba(0,0,0,.2),
 							0 10px 10px rgba(0,0,0,.2);
   &:hover{
-    transform:scale(1.3);
+    transform:scale(1.2);
     border-radius:15em;
+    transition-delay:.3s;
   }
 }
 .text
 {
+  margin-top:-0.5rem;
+  font-size:15px;
   background-color:#777777;
   border-radius:10px;
   text-transform: capitalize;
@@ -119,7 +123,7 @@
     background-color:#9c9898;
   }
 }
-h5
+h6
 {
   font-weight:900 !important;
 }
