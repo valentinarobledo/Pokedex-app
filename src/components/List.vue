@@ -114,6 +114,7 @@
 {
   background-color:#6b6969;
   border-radius:10px;
+  text-transform: capitalize;
   &:hover{
     background-color:#9c9898;
   }

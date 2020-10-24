@@ -114,8 +114,9 @@
 .filter{
     margin-top:1.5em;
 }
-.color, .type{
+.color, .type, .gender{
     width:150px;
+    text-transform: capitalize;
 }
 .custom-checkbox{
     z-index:0 !important;

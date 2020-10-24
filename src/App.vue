@@ -27,6 +27,7 @@
           :imgUrl="imgUrl"
           :color="color"
           :habitat="habitat"
+          :evolution="evolution"
           @closeDetails="closeDetails"/>
         </div>
       </div>
@@ -49,6 +50,7 @@ export default {
       imgUrl: 'https://pokeres.bastionbot.org/images/pokemon/',
       color:'',
       habitat:'',
+      evolution:'',
       pokemonUrl:'',
       showDetails:false
     }
@@ -96,6 +98,7 @@ export default {
         .then((data) => {
           this.color=data.color.name;
           this.habitat=data.habitat.name;
+          this.evolution=data.evolves_from_species.name;
         })
         .catch((error) => {
           console.log(error);

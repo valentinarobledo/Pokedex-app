@@ -6,6 +6,10 @@
 						<div v-if="pokemon" class="image">
 							<img :src="imgUrl + pokemon.id + '.png'" alt="" width="250" height="250">
 						</div>
+						<div class="evolution">
+							<h5>Evolution from <i class="fas fa-cloud-moon"></i></h5>
+							<div class="item">{{evolution}}</div>
+						</div>
 					</div>
 					<div class="col-sm-8">
 						<div v-if="pokemon" class="data">
@@ -49,7 +53,8 @@
 			'pokemonUrl',
 			'imgUrl',
 			'color',
-			'habitat'
+			'habitat',
+			'evolution'
     ],
     data: () => {
       return {
@@ -60,7 +65,6 @@
     methods: {
       fetchData() {
 				let req = new Request(this.pokemonUrl);
-				console.log(this.color, this.habitat);
         fetch(req)
           .then((resp) => {
             if(resp.status === 200)
@@ -115,6 +119,19 @@
 				width: 250px;
 				border-radius:250px;
 			}
+			.evolution{
+				margin-top:45px;
+			}
+			.item{
+				text-align: center;
+				font-size:1em;
+				text-transform: capitalize;
+				letter-spacing: 1.5px;
+				background-color:darkcyan;
+				border-radius:20px;
+				color:white;
+				font-weight: 600;
+			}
 			.data{
 				display: flex;
 				justify-content: flex-start;
@@ -131,9 +148,9 @@
 						margin-bottom: 10px;
 
 						.left { float: left; }
-						.right { float: right; font-weight: 600; }
+						.right { float: right; font-weight: 600; text-transform: capitalize; }
 					}
-					h2, h4{
+					h2, h4, h5{
 						&:hover{
 							text-decoration:underline;
 							cursor:pointer;
@@ -148,7 +165,7 @@
 
           .type{
             margin: 0 10px 10px 0;
-						text-align: center;
+			text-align: center;
             padding: 5px 10px;
             border-radius: 20px;
             color: #fff;
@@ -157,20 +174,23 @@
             text-transform: capitalize;
             word-wrap: none;
             word-break: keep-all;
-						background-color:#C73015;
-						&:hover{
-								background-color:#e8664f;
-						}
+			background-color:#C73015;
+			&:hover{
+					background-color:#e8664f;
+			}
           }
         }		
 				h2{
 					font-weight:900;
+					text-transform: capitalize;
 				}
 				h4{
 					margin-bottom:1em;
 					margin-top:1.5em;
 					font-weight:600;
-
+				}
+				h5{
+					font-weight: 600;
 				}		
 				.id{
 					width:50px;
