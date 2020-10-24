@@ -112,7 +112,7 @@
 }
 .text
 {
-  background-color:#6b6969;
+  background-color:#777777;
   border-radius:10px;
   text-transform: capitalize;
   &:hover{

@@ -100,7 +100,7 @@
     color:white;
     font-size:1.2em;
     font-weight: bolder;
-    background-color:chartreuse;
+    background-color:#58cc02;
     border-radius:2em;
     width:15em;
     text-align: center;
@@ -122,13 +122,13 @@
     z-index:0 !important;
 }
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::after{
-    background-color:chartreuse;
-    border-color:chartreuse;
+    background-color:#58cc02;
+    border-color:#58cc02;
 }
 .rotated{
     z-index: 1000;
     margin-top: -65px;
-    margin-left: 66px;
+    margin-left:90px;
 	animation-name: rotation;
 	animation-duration: 5s;
 	animation-iteration-count: infinite;

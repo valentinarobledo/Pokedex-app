@@ -7,7 +7,7 @@
 							<img :src="imgUrl + pokemon.id + '.png'" alt="" width="250" height="250">
 						</div>
 						<div class="evolution">
-							<h5>Evolution from <i class="fas fa-cloud-moon"></i></h5>
+							<h5>Evolution from </h5>
 							<div class="item">{{evolution}}</div>
 						</div>
 					</div>
@@ -127,10 +127,14 @@
 				font-size:1em;
 				text-transform: capitalize;
 				letter-spacing: 1.5px;
-				background-color:darkcyan;
+				background-color:#2b70c9;
 				border-radius:20px;
 				color:white;
 				font-weight: 600;
+				cursor:pointer;
+				&:hover{
+					background-color:#1899d6;
+				}
 			}
 			.data{
 				display: flex;
@@ -174,9 +178,9 @@
             text-transform: capitalize;
             word-wrap: none;
             word-break: keep-all;
-			background-color:#C73015;
+			background-color:#ea2b2b;
 			&:hover{
-					background-color:#e8664f;
+					background-color:#ff7878;
 			}
           }
         }		
@@ -198,7 +202,7 @@
 					color:white;
 					font-size:18px;
 					font-weight: 900;
-					background-color:#ff9800;
+					background-color:#ffb100;
 					border-radius:16px;
 					margin-bottom:1em;
 					&:hover{
@@ -210,7 +214,7 @@
         outline: none;
         border: none;
         border-radius: 5px;
-        background-color: rgb(29, 26, 26);
+        background-color:#4b4b4b;
         color: #efefef;
         padding: 10px 20px;
         margin-bottom: 20px;
