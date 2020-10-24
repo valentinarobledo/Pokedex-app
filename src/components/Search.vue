@@ -34,14 +34,14 @@ export default {
     position:relative;
     float: right;
     width: 100%;
-    max-width: 510px;
+    max-width: 500px;
     padding-bottom: 20px;
 
     input {
       text-align: center;
       border: none;
       outline: none;
-      border-radius: 5px;
+      border-radius:30px;
       padding: 10px 40px 10px 10px;
       width: calc(100% - 50px);
       font-size: 1rem;

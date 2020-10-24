@@ -2,7 +2,9 @@
   <div id="app">  
     <div class="container">
       <div class="row">
-        <img class="banner" src="./banner.png" alt="logo">
+        <div class="header">
+            <img class="banner" src="./banner.png" alt="logo">
+        </div>
       </div>
       <div class="row">
         <div class="col-sm-4">
@@ -138,5 +140,6 @@ export default {
 
 .banner{
   margin-top:30px;
+  margin-bottom:40px;
 }
 </style>

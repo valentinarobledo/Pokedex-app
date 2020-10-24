@@ -100,11 +100,15 @@
 }
 .card
 {
-	margin:10px;
+	margin:20px;
 	border-radius: 5px;
 	cursor: pointer;
 	box-shadow: 0 15px 30px rgba(0,0,0,.2),
 							0 10px 10px rgba(0,0,0,.2);
+  &:hover{
+    transform:scale(1.3);
+    border-radius:15em;
+  }
 }
 .text
 {

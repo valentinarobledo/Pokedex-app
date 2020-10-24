@@ -1,34 +1,37 @@
 <template>
     <div class="app">
-        <div class="title-pp">
-            <h4>Filters</h4>
+        <div class="row">
+            <div class="title-pp">
+                <h4>Filters</h4>
+                <img class="rotated" src="../pokeball.png" width="60" alt="logo"> 
+            </div>
         </div>
         <div class="filter">
             <div class="row">
-                <div class="title">Type</div>
+                <div class="title">Type <i class="fab fa-hotjar"></i></div>
             </div>
             <div class="row">
                 <div class="type" v-for="(type, index) in types" v-bind:key="index">
-                    <b-form-checkbox v-model="types[index].right" >{{ type.name }}</b-form-checkbox>
+                    <b-form-checkbox size="lg" v-model="types[index].right" >{{ type.name }}</b-form-checkbox>
                 </div>    
             </div>            
         </div>
         <div class="filter">
             <div class="row">
-                <div class="title">Color</div>
+                <div class="title">Color <i class="fas fa-atom"></i></div>
             </div>
             <div class="row">
                 <div class="color" v-for="(color, index) in colors" v-bind:key="index">
-                    <b-form-checkbox v-model="colors[index].right">{{ color.name }}</b-form-checkbox>
+                    <b-form-checkbox size="lg" v-model="colors[index].right">{{ color.name }}</b-form-checkbox>
                  </div>
             </div>
         </div>
         <div class="filter">
             <div class="row">
-                <div class="title">Gender</div>
+                <div class="title">Gender <i class="fas fa-bolt"></i></div>
             </div>
                 <div class="gender" v-for="(gender, index) in genders" v-bind:key="index">
-                    <b-form-checkbox v-model="genders[index].right">{{ gender.name }}</b-form-checkbox>
+                    <b-form-checkbox size="lg" v-model="genders[index].right">{{ gender.name }}</b-form-checkbox>
                 </div>
         </div>
     </div>
@@ -95,23 +98,48 @@
 <style lang="scss">
 .title{
     color:white;
-    font-size:1em;
+    font-size:1.2em;
     font-weight: bolder;
-    background-color:#4caf50;
+    background-color:chartreuse;
     border-radius:2em;
-    width:5em;
+    width:8em;
     text-align: center;
     margin-bottom:0.5em;
+
 }
 .title-pp{
-    margin-top:1em;
     text-decoration: underline;
-    color:#1bb120;
+    color:#58cc02;
 }
 .filter{
-    margin-top:2em;
+    margin-top:1.5em;
 }
 .color, .type{
     width:150px;
+}
+.custom-checkbox{
+    z-index:0 !important;
+}
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::after{
+    background-color:chartreuse;
+    border-color:chartreuse;
+}
+.rotated{
+    z-index: 1000;
+    margin-top: -65px;
+    margin-left: 66px;
+	animation-name: rotation;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+@keyframes rotation {
+  0% {
+    transform:rotate(0deg);
+  }
+  100% {
+    transform:rotate(360deg);
+  }
 }
 </style>

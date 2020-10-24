@@ -3,13 +3,13 @@
 			<div class="view" v-if="show">
 				<div class="row">
 					<div class="col-sm-4">
-							<div v-if="pokemon" class="image">
-									<img :src="imgUrl + pokemon.id + '.png'" alt="" width="250" height="250">
-							</div>
+						<div v-if="pokemon" class="image">
+							<img :src="imgUrl + pokemon.id + '.png'" alt="" width="250" height="250">
+						</div>
 					</div>
 					<div class="col-sm-8">
 						<div v-if="pokemon" class="data">
-							<h2>{{pokemon.name}}</h2>
+							<h2>{{pokemon.name}} <i class="fas fa-paw"></i></h2>
 							<div class="id">{{pokemon.id}}</div>
 							<div class="prop">
 								<div class="left">Height</div>
@@ -20,14 +20,6 @@
 								<div class="right">{{pokemon.weight}}</div>
 							</div>
 							<div class="prop">
-								<div class="left">Category</div>
-								<div class="right"></div>
-							</div>
-							<div class="prop">
-								<div class="left">Gender</div>
-								<div class="right"></div>
-							</div>
-							<div class="prop">
 								<div class="left">Habitat</div>
 								<div class="right">{{habitat}}</div>
 							</div>
@@ -35,7 +27,7 @@
 								<div class="left">Color</div>
 								<div class="right">{{color}}</div>
 							</div>
-							<h4>Pokemon Types</h4>
+							<h4>Pokemon Types <i class="fas fa-feather-alt"></i></h4>
 							<div class="types">
 								<div class="type" 
 									v-for="(value, index) in pokemon.types"
@@ -104,26 +96,31 @@
     height: calc(100vh - 20px);
     background: rgba($color: #000000, $alpha: .7);
 
-		.view{
+	.view{
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
       position: relative;
       width: 100%;
-      max-width: 600px;
+      max-width: 700px;
       padding: 50px 0 0;
       background-color: #fff;
       border-radius: 5px;
       box-shadow: 0 15px 30px rgba(0,0,0,.2),
                   0 10px 10px rgba(0,0,0,.2);
-    
+
+			.image{
+				background:#314148;
+				width: 250px;
+				border-radius:250px;
+			}
 			.data{
 				display: flex;
 				justify-content: flex-start;
 				align-items: center;
 				flex-direction: column;
-				padding-left:22%;
+				padding-left:5em;
 				width: 100%;
 				margin-bottom: 40px;	
 				
@@ -135,6 +132,12 @@
 
 						.left { float: left; }
 						.right { float: right; font-weight: 600; }
+					}
+					h2, h4{
+						&:hover{
+							text-decoration:underline;
+							cursor:pointer;
+						}
 					}		
         .types{
           display: flex;
