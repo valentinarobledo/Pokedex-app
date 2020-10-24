@@ -6,7 +6,10 @@
       </div>
       <div class="row">
         <div class="col-sm-4">
-          lista
+          <Filt
+          :apiUrl="apiUrl" 
+          @setPokemonUrl="setPokemonUrl"
+          @filter="filter"/>
         </div>
         <div class="col-sm-8">
           <Search
@@ -31,8 +34,10 @@
 
 <script>
 import List from './components/List.vue'
+import Filt from './components/Filt.vue'
 import Search from './components/Search.vue'
 import Details from './components/Details.vue'
+import axios from "axios";
 
 export default {
   name: 'App',
@@ -48,6 +53,7 @@ export default {
   },
   components: {
     List,
+    Filt,
     Search,
     Details
   },
@@ -60,6 +66,24 @@ export default {
       this.fetchData(url.url2);
       this.showDetails=true;     
     },
+    filter(obj){
+      var name;
+      if(obj.type=='gender'){
+        obj.val.forEach(element => {
+          if(element.right){
+            name=element.name;
+            this.fetchData2('gender/' + name);
+          }
+        });
+        
+      }
+      else if(obj.type=='type'){
+        this.fetchData2('type/' + name);
+      }
+      else{
+        this.fetchData2('pokemon-color' + name);
+      }
+    },
     fetchData(url) {
       let req = new Request(url);
       fetch(req)
@@ -69,13 +93,36 @@ export default {
         })
         .then((data) => {
           this.color=data.color.name;
-          console.log(data.color.name);
-          console.log(data.habitat.name);
           this.habitat=data.habitat.name;
         })
         .catch((error) => {
           console.log(error);
+        });
+      },
+    fetchData2(url) {
+      //let req = new Request(url);
+      /*fetch(req)
+        .then((resp) => {
+          if(resp.status === 200)
+          console.log(resp.json());
+            return resp.json();
+
         })
+        .then((data) => {
+          console.log(data);
+          return data;
+        })
+        .catch((error) => {
+          console.log(error);
+        });*/
+      axios.get(url)
+      .then(function(data){
+        console.log(data);
+      })
+      .catch((error)=>{
+        console.log(error);
+      });
+        
       },
     closeDetails(){
       this.pokemonUrl='';
