@@ -102,7 +102,7 @@
     font-weight: bolder;
     background-color:chartreuse;
     border-radius:2em;
-    width:8em;
+    width:15em;
     text-align: center;
     margin-bottom:0.5em;
 
