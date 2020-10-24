@@ -5,9 +5,9 @@ Pokemon-app
 ```
 ## Project
 ```
-https://github.com/valentinarobledo/Pokedex-app/blob/master/src/assets/img1.png
+(https://github.com/valentinarobledo/Pokedex-app/blob/master/src/assets/img1.png)
 
-https://github.com/valentinarobledo/Pokedex-app/blob/master/src/assets/img2.png
+(https://github.com/valentinarobledo/Pokedex-app/blob/master/src/assets/img2.png)
 
 ```
 ## Project setup
